@@ -1,6 +1,8 @@
 # ImageSearch
 This was created for FreeCodeCamp's Image Search Abstraction Layer Back-end project. 
+
 [View Project Page](https://www.freecodecamp.org/challenges/image-search-abstraction-layer)
+
 [View Live Demo](https://spark-ogre.glitch.me/)
 
 ## User stories:
