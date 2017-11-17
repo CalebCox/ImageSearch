@@ -6,11 +6,11 @@ const express               = require('express'),
       app                   = express();
 
 const port = process.env.PORT || 3000;
-
-mongoose.connect('mongodb://localhost/imagesearch2', {useMongoClient: true });
+require('dotenv').config();
+mongoose.connect(process.env.MLAB, {useMongoClient: true });
 app.use('/static', express.static(__dirname + '/public'));
 app.use(bodyParser.json());
-require('dotenv').config();
+
 
 const searchClient = new cognitiveServices.bingImageSearchV7({
     apiKey: process.env.API_KEY,
@@ -23,8 +23,15 @@ app.get("/", (req, res) => {
 
 app.get("/api/recent", (req, res, next) => {
     searchQuery.find({}, (err, data) => {
-        res.json(data);
-    })
+        var results = [];
+        for(i=0; i<data.length;i++) {
+            results.push({
+                term: data[i].query,
+                when: data[i].date
+            });
+        };
+        res.json(results);
+    });
 });
 
 app.get("/api/search/:query*", (req, res, next) => {
