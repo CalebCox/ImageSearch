@@ -1,0 +1,73 @@
+<style>
+    @import url('https://fonts.googleapis.com/css?family=Raleway:200,400,700');
+    @import url('https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css');
+
+    * {
+        font-family: 'Raleway', sans-serif;
+    }
+
+    h1 {
+        font-weight: 800;
+    }
+
+    h4 {
+        font-weight: 200;
+    }
+
+    h1, h4 {
+        text-align: center;
+    }
+
+    div {
+        width: 60%;
+        margin: 0 auto;
+    }
+
+    h2 {
+        margin-bottom: 0;
+    }
+
+    p, code {
+        font-weight: 400;
+    }
+    footer {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        flex-wrap: nowrap;
+        flex-direction: row;
+        width: 100%;
+        position: absolute;
+        bottom: 0;
+    }
+    footer a {
+        text-decoration: none;
+        color: lightblue;
+    }
+     footer p,
+     footer .main-link {
+         margin: 50px;
+     }
+     footer p i {
+         margin: 10px;
+         font-size: 1.5em !important;
+         color: black;
+     }
+</style>
+
+<h1>FreeCodeCamp Image Search Abstraction Layer Backend Project</h1>
+<h4>Completed by Caleb Cox</h4>
+<div>
+    <h2>Example Usage:</h2>
+    <code>
+        https://spark-ogre.glitch.me/api/search/<em>search term</em>/<em>?offset=2</em>
+        <br>
+        https://spark-ogre.glitch.me/api/recent
+    </code>
+    <p><code>/api/search/</code> - Allows the user to append a term to search or an offset(optional) for pagination and searching for images.</p>
+    <p><code>/api/recent</code> - Displays all recent searches to the user.</p>
+</div>
+<footer>
+    <a class="main-link" href="https://github.com/CalebCox/ImageSearch">View the source on Github</a>
+    <p>Find more from me on these platforms: <a href="https://github.com/CalebCox"><i class="fa fa-github"></i></a><a href="https://codepen.io/Nestik/"><i class="fa fa-codepen"></i></a></p>
+</footer>

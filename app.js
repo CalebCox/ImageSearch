@@ -8,9 +8,8 @@ const express               = require('express'),
 const port = process.env.PORT || 3000;
 require('dotenv').config();
 mongoose.connect(process.env.MLAB, {useMongoClient: true });
-app.use('/static', express.static(__dirname + '/public'));
 app.use(bodyParser.json());
-
+app.set('view engine', 'ejs');
 
 const searchClient = new cognitiveServices.bingImageSearchV7({
     apiKey: process.env.API_KEY,
@@ -18,7 +17,7 @@ const searchClient = new cognitiveServices.bingImageSearchV7({
 });
 
 app.get("/", (req, res) => {
-    res.send("This is a test!");
+    res.render('index');
 });
 
 app.get("/api/recent", (req, res, next) => {
